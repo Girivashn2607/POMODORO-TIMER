@@ -7,58 +7,27 @@ This project implements a Pomodoro Timer, a productivity technique where you foc
 🚀 About the Project
 
 This project helped me learn the basics of:
-
 HTML page structure
-
 CSS styling and layout
-
 JavaScript DOM manipulation
-
 Timer logic using setInterval()
-
 Creating interactive web applications
-
 The timer includes a circular progress indicator, start/pause controls, and a reset button.
 
 ✨ Features
 
 ⏱ 25-minute focus timer
-
 ▶ Start / Pause timer
-
 🔄 Reset functionality
-
 📊 Circular progress animation
-
 🔔 Notification sound when timer finishes
-
 🎨 Clean and modern UI
 
 🛠 Technologies Used
 
 HTML
-
 CSS
-
 JavaScript
-
-📂 Project Files
-pomodoro-timer
-│
-├── index.html
-├── style.css
-└── script.js
-▶ How to Run
-
-Clone the repository
-
-git clone https://github.com/Girivashn/POMODORO-TIMER.git
-
-Open the folder
-
-cd POMODORO-TIMER
-
-Open index.html in your browser.
 
 📚 What I Learned
 
