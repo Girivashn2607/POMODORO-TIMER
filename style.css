@@ -1,0 +1,160 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.15);
+    --primary-color: #f43f5e; /* Rose 500 */
+    --primary-hover: #e11d48; /* Rose 600 */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+}
+
+.container {
+    padding: 2rem;
+}
+
+.timer-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--card-border);
+    border-radius: 36px;
+    padding: 3.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timer-card:hover {
+    transform: translateY(-8px);
+}
+
+.ring-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+    stroke-dasharray: 880;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear, stroke 0.3s ease;
+    stroke-linecap: round;
+}
+
+.time-display {
+    font-size: 5.5rem;
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+.status {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+}
+
+.controls {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn svg {
+    width: 32px;
+    height: 32px;
+}
+
+.btn:active {
+    transform: scale(0.92);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 15px 30px rgba(244, 63, 94, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(1px) scale(0.95);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid var(--card-border);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(1px) scale(0.95);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.timer-done .progress-ring__circle {
+    animation: pulse 2s infinite ease-in-out;
+}
