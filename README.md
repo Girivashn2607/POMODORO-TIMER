@@ -7,11 +7,17 @@ This project implements a Pomodoro Timer, a productivity technique where you foc
 🚀 About the Project
 
 This project helped me learn the basics of:
+
 HTML page structure
+
 CSS styling and layout
+
 JavaScript DOM manipulation
+
 Timer logic using setInterval()
+
 Creating interactive web applications
+
 The timer includes a circular progress indicator, start/pause controls, and a reset button.
 
 ✨ Features
